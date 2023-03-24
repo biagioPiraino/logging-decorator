@@ -2,7 +2,6 @@ import psycopg2
 import os
 from user import User
 
-
 class LoggerDO:
   def __init__(self):
     self.host     = os.environ.get("HOST")
