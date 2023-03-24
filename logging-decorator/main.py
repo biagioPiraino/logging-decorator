@@ -5,9 +5,13 @@ from user import User
 def MethodToCall(user: User):
   pass
 
+@logit
+def AnotherMethodToCall(user: User):
+  pass
+
 if __name__ == "__main__":
   current_user = User("user_00")
-  MethodToCall(current_user)
+  MethodToCall(user=current_user)
 
   current_user.authenticated = True
-  MethodToCall(current_user)
+  AnotherMethodToCall(user=current_user)
