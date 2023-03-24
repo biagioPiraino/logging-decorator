@@ -1,22 +1,23 @@
 import psycopg2
+import os
 from user import User
 
 
 class LoggerDO:
-    def __init__(self, host, port, dbname, user, password):
-        self.host = host
-        self.port = port
-        self.dbname = dbname
-        self.user = user
-        self.password = password
+    def __init__(self):
+        self.host     = os.environ.get("HOST")
+        self.port     = os.environ.get("PORT")
+        self.dbname   = os.environ.get("DB_NAME")
+        self.user     = os.environ.get("USER")
+        self.password = os.environ.get("PASSWORD")
 
     def __enter__(self):
         self.conn = psycopg2.connect(
-            host=self.host,
-            port=self.port,
-            dbname=self.dbname,
-            user=self.user,
-            password=self.password
+            host     = self.host,
+            port     = self.port,
+            dbname   = self.dbname,
+            user     = self.user,
+            password = self.password
         )
         self.cursor = self.conn.cursor()
         return self
@@ -25,7 +26,7 @@ class LoggerDO:
         self.cursor.close()
         self.conn.close()
 
-    def LogMethodCall(self, user: User, method_name: str) -> None:
+    def LogMethodCall(self, method_name: str, user: User) -> None:
         self.cursor.callproc(
             "log_method_call",
             (method_name, user.username, user.authenticated))
