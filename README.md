@@ -26,15 +26,15 @@ Have an active <a href="https://www.postgresql.org/" target="_blank">PostgreSQL<
 
 2) Create a .venv folder in the projects' root folder, create a virtual environment by running the command <code>$ virtualenv .venv</code> and install the <a href="https://pypi.org/project/psycopg2/" target="_blank"><em>psycopg2</em></a> package.
 
-3) Access to a local PostgreSQL server using <code>$psql -U postgres</code>.
+3) Access to a local PostgreSQL server using <code>$ psql -U postgres</code>.
 
-4) Run the <em>database_script.sql</em> using <code>$\i path\database_script.sql</code> once connected to the local server.
+4) Run the <em>database_script.sql</em> using <code>$ \i path\database_script.sql</code> once connected to the local server.
 
 5) Activate the virtual environment using <code>$ source .venv/bin/activate</code>.
 
 6) Run the <em>main.py</em> script.
 
-7) Deactivate the virtual environment using <code>deactivate</code>.
+7) Deactivate the virtual environment using <code>$ deactivate</code>.
 
 <hr>
 <h3>References</h3>
