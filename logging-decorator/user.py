@@ -1,4 +1,4 @@
 class User:
-  def __init__(self, username: str) -> None:
-    self.username = username
-    self.authenticated = False
+    def __init__(self, username: str) -> None:
+        self.username = username
+        self.authenticated = False
